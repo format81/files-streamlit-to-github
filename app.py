@@ -4,7 +4,7 @@ from github import Github
 from uuid import uuid4
 
 # GitHub credentials
-GITHUB_TOKEN = ""
+GITHUB_TOKEN = st.secrets["github_accesstoken"]
 REPO_NAME = "format81/files-streamlit-to-github"
 
 def upload_to_github(json_content):
