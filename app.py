@@ -1,34 +1,38 @@
 import streamlit as st
 import json
 from github import Github
+from uuid import uuid4
 
 # GitHub credentials
-GITHUB_TOKEN = "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"
+GITHUB_TOKEN = st.secrets["api_keys"]["thumbnail"]
 REPO_NAME = "format81/files-streamlit-to-github"
-FILE_PATH = "navigator/filename.json"  # Specify the full file path in the repo
 
 def upload_to_github(json_content):
     g = Github(GITHUB_TOKEN)
     repo = g.get_repo(REPO_NAME)
     commit_message = "Updated via Streamlit app"
 
+    # Generate a unique file name
+    unique_id = str(uuid4())
+    file_path = f"navigator/{unique_id}.json"
+
     # Convert JSON to string
     json_str = json.dumps(json_content, indent=4)
 
     try:
         # Get the file contents from GitHub
-        contents = repo.get_contents(FILE_PATH)
+        contents = repo.get_contents(file_path)
         sha = contents.sha
         # Update the file
         repo.update_file(contents.path, commit_message, json_str, sha)
         st.success("File updated successfully.")
     except:
         # If file does not exist, create it
-        repo.create_file(FILE_PATH, commit_message, json_str)
+        repo.create_file(file_path, commit_message, json_str)
         st.success("File created successfully.")
 
     # Return the raw URL of the uploaded JSON file
-    raw_url = f"https://raw.githubusercontent.com/{REPO_NAME}/main/{FILE_PATH}"
+    raw_url = f"https://raw.githubusercontent.com/{REPO_NAME}/main/{file_path}"
     return raw_url
 
 st.title("JSON to GitHub")
