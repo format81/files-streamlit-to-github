@@ -1,0 +1,182 @@
+{
+    "versions": {
+        "attack": "14",
+        "navigator": "4.9.1",
+        "layer": "4.5"
+    },
+    "name": "Lazarus Group TTPs",
+    "description": "Deploying novel mime-attack, these tactics, techniques, and procedures have been identified to be used by instances of Lazarus Group malware.",
+    "domain": "enterprise-attack",
+    "techniques": [
+        {
+            "techniqueID": "T1204",
+            "color": "",
+            "comment": "NineRAT Trojan is executed on the infected system",
+            "tactic": "execution",
+            "enabled": true,
+            "score": 1
+        },
+        {
+            "techniqueID": "T1082",
+            "color": "",
+            "comment": "NineRAT Trojan is used to collect information about the system like IP configuration, system version and architecture, antivirus product in use, user account information, etc",
+            "tactic": "discovery",
+            "enabled": true,
+            "score": 1
+        },
+        {
+            "techniqueID": "T1037",
+            "color": "",
+            "comment": "BAT script is used to establish persistent presence of the first component of the malware",
+            "tactic": "persistence",
+            "enabled": true,
+            "score": 1
+        },
+        {
+            "techniqueID": "T1136",
+            "color": "",
+            "comment": "New user account is created with administrative privileges by the attacker",
+            "tactic": "discovery",
+            "enabled": true,
+            "score": 1
+        },
+        {
+            "techniqueID": "T1078",
+            "color": "",
+            "comment": "Attacker switches to the new user account with admin privileges for further activity",
+            "tactic": "defense-evasion",
+            "enabled": true,
+            "score": 1
+        },
+        {
+            "techniqueID": "T1005",
+            "color": "",
+            "comment": "Credential dumping utilities like ProcDump and MimiKatz are used for collecting system credentials",
+            "tactic": "collection",
+            "enabled": true,
+            "score": 1
+        },
+        {
+            "techniqueID": "T1219",
+            "color": "",
+            "comment": "Tools such as NineRAT, BottomLoader, DLRAT, and HazyLoad are used for remote access of the system",
+            "tactic": "command-and-control",
+            "enabled": true,
+            "score": 1
+        },
+        {
+            "techniqueID": "T1583",
+            "color": "",
+            "comment": "NineRAT uses Telegram bots as C2 channel",
+            "tactic": "command-and-control",
+            "enabled": true,
+            "score": 1
+        },
+        {
+            "techniqueID": "T1033",
+            "color": "",
+            "comment": "Attacker uses command to discover system administrator",
+            "tactic": "discovery",
+            "enabled": true,
+            "score": 1
+        },
+        {
+            "techniqueID": "T1003.005",
+            "color": "",
+            "comment": "Attacker uses commands to dump OS credentials",
+            "tactic": "credential-access",
+            "enabled": true,
+            "score": 1
+        },
+        {
+            "techniqueID": "T1027",
+            "color": "",
+            "comment": "Payload is encoded in base64 form and constructed on the process stack",
+            "tactic": "defense-evasion",
+            "enabled": true,
+            "score": 1
+        },
+        {
+            "techniqueID": "T1094",
+            "color": "",
+            "comment": "Malware interacts with Telegram channel for command execution",
+            "tactic": "command-and-control",
+            "enabled": true,
+            "score": 1
+        },
+        {
+            "techniqueID": "T1016",
+            "color": "",
+            "comment": "Various system network configuration information are captured for further action",
+            "tactic": "discovery",
+            "enabled": true,
+            "score": 1
+        },
+        {
+            "techniqueID": "T1059",
+            "color": "",
+            "comment": "Various system commands are used to execute actions, download and execute malware, perform initial reconnaissance etc",
+            "tactic": "execution",
+            "enabled": true,
+            "score": 1
+        },
+        {
+            "techniqueID": "T1105",
+            "color": "",
+            "comment": "Files from C2 server are downloaded and uploaded",
+            "tactic": "command-and-control",
+            "enabled": true,
+            "score": 1
+        },
+        {
+            "techniqueID": "T1140",
+            "color": "",
+            "comment": "Hardcoded Session ID in DLRAT is in the same format as MagicRAT",
+            "tactic": "defense-evasion",
+            "enabled": true,
+            "score": 1
+        },
+        {
+            "techniqueID": "T1210",
+            "color": "",
+            "comment": "Log4j vulnerability (CVE-2021-44228) is exploited for initial access",
+            "tactic": "initial-access",
+            "enabled": true,
+            "score": 1
+        },
+        {
+            "techniqueID": "T1569.002",
+            "color": "",
+            "comment": "Service execution commands are used for setting up malware components and ensure their persistence on the system",
+            "tactic": "execution",
+            "enabled": true,
+            "score": 1
+        },
+        {
+            "techniqueID": "T1047",
+            "color": "",
+            "comment": "WMI commands used to gather system information and detect installed antivirus",
+            "tactic": "execution",
+            "enabled": true,
+            "score": 1
+        },
+        {
+            "techniqueID": "T1496",
+            "color": "",
+            "comment": "Telegram bot command is hijacked for malware communication",
+            "tactic": "impact",
+            "enabled": true,
+            "score": 1
+        }
+    ],
+    "gradient": {
+        "colors": [
+            "#ff6666",
+            "#ffe766",
+            "#8ec843"
+        ],
+        "minValue": 0,
+        "maxValue": 1
+    },
+    "legendItems": []
+}
