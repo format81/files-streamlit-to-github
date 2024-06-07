@@ -33,6 +33,7 @@ def upload_to_github(json_content):
 
     # Return the raw URL of the uploaded JSON file
     raw_url = f"https://raw.githubusercontent.com/{REPO_NAME}/main/{file_path}"
+    st.write(raw_url)
     return raw_url
 
 st.title("JSON to GitHub")
